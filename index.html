@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirec</title>
+    <style>
+        /* Ensure body takes up the full height and centers the content */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main container to center content horizontally and vertically */
+        .container {
+            text-align: center;
+        }
+
+        /* Grid container for the logo squares */
+        .microsoft-logo {
+            display: grid;
+            grid-template-columns: repeat(2, 30px);
+            grid-template-rows: repeat(2, 30px);
+            gap: 5px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for individual squares */
+        .square {
+            width: 30px;
+            height: 30px;
+            opacity: 0; /* Initially hidden */
+            animation: blink 2s infinite alternate;
+        }
+
+        /* Colors for the squares */
+        .square.red { background-color: #F25022; }
+        .square.green { background-color: #7FBA00; }
+        .square.blue { background-color: #00A4EF; }
+        .square.yellow { background-color: #FFB900; }
+
+        /* Animation to make squares blink in sequence */
+        .square.red {
+            animation-delay: 0s;
+        }
+
+        .square.green {
+            animation-delay: 1s;
+        }
+
+        .square.blue {
+            animation-delay: 2s;
+        }
+
+        .square.yellow {
+            animation-delay: 3s;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Text styling for the "Microsoft" label */
+        .microsoft-text {
+            font-weight: bold;
+            font-size: 25px;
+            color: #434242;
+        }
+
+        /* Make the layout responsive by adjusting font size and grid layout for small screens */
+        @media (max-width: 600px) {
+            .microsoft-logo {
+                grid-template-columns: repeat(2, 25px); /* Smaller grid for mobile devices */
+                grid-template-rows: repeat(2, 25px);
+                gap: 3px;
+            }
+
+            .square {
+                width: 25px;
+                height: 25px;
+            }
+
+            .microsoft-text {
+                font-size: 20px; /* Smaller text for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <!-- Microsoft Logo -->
+            <div class="microsoft-logo">
+                <div class="square red"></div>
+                <div class="square green"></div>
+                <div class="square blue"></div>
+                <div class="square yellow"></div>
+            </div>
+            <!-- Microsoft Text -->
+        </div>
+    </div>
+
+    <script>
+        // Redirect after 5 seconds
+        setTimeout(function() {
+            window.location.href = "#";  // Replace with your desired redirect URL
+        }, 5000);
+    </script>
+</body>
+</html>
